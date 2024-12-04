@@ -83,11 +83,16 @@ public class Game {
     }
 
     private void distributeInitialCards() {
+        // for all 4 players, you are adding crad and discarding some baed on input
+        // you are asking the user which hand they want to trim
+        // we have to take this input from Browser,
+        // this we have to do for all 4 players
+        // input : 1 2 3; 4 5 6; 7 8 9; 10 11 12;
         for (Player player : players) {
             for (int i = 0; i < 12; i++) {
                 player.addCard(adventureDeck.drawCard());
-                player.trimHand();
             }
+            player.trimHand();
         }
     }
 
